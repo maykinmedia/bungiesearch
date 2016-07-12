@@ -174,8 +174,8 @@ class Bungiesearch(Search):
                 results[pos] = result
             else:
                 meta = Bungiesearch.get_model_index(model_name).Meta
-                model_results['{}.{}'.format(result.meta.index, model_name)].append(result.meta.id)
-                found_results['{1.meta.index}.{0}.{1.meta.id}'.format(model_name, result)] = (pos, result.meta)
+                model_results['{}.{}'.format(result.meta.index, model_name)].append(result.id)
+                found_results['{1.meta.index}.{0}.{1.id}'.format(model_name, result)] = (pos, result.meta)
 
         # Now that we have model ids per model name, let's fetch everything at once.
         for ref_name, ids in iteritems(model_results):

@@ -148,7 +148,12 @@ class Command(BaseCommand):
                             analysis[key].update(value)
 
                 logging.info('Creating index {} with {} doctypes.'.format(index, len(mapping)))
-                es.indices.create(index=index, body={'mappings': mapping, 'settings': {'analysis': analysis}})
+
+                body = {'mappings': mappings}
+                if analysis and analysis != {}:
+                    body['settings'] = {'analysis': analysis}
+
+                es.indices.create(index=index, body=body)
 
             es.cluster.health(index=','.join(indices), wait_for_status='green', timeout='30s')
 
