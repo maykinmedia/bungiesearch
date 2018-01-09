@@ -15,8 +15,8 @@ with open(join(dirname(__file__), 'README.rst')) as f:
 
 install_requires = [
     'django>=1.7',
-    'elasticsearch-dsl>=6.0,<6.1',
-    'elasticsearch>=6.0,<6.1',
+    'elasticsearch-dsl>=6.1,<6.2',
+    'elasticsearch>=6.1,<6.2',
     'python-dateutil',
     'six',
 ]
