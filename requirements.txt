@@ -1,5 +1,5 @@
-elasticsearch-dsl>=6.0,<6.1
-elasticsearch>=6.0,<6.1
+elasticsearch-dsl>=6.1,<6.2
+elasticsearch>=6.1,<6.2
 python-dateutil
 six
 
